@@ -9,10 +9,16 @@
 //   fib(4) === 3
 
 function fib(n) {
-    if(n<2){
-        return n
+    let fibo = [0,1]
+    for (let i = 0; i < n; i++){
+        fibo.push(fibo[i+1] + fibo[i])
     }
-    return fib(n-1) + fib(n-2)
+    return fibo[n]
+    
+    // if(n<2){
+    //     return n
+    // }
+    // return fib(n-1) + fib(n-2)
 }
 
 module.exports = fib;
