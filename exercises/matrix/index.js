@@ -33,10 +33,30 @@ function matrix(n) {
         mtx.push([])
     }
        
-    while(startX < endX && startY < endY){
-        //Top Row
-        )
+    while(startX <= endX && startY <= endY){
+        for(let i = startX; i <= endX; i++){
+            mtx[startY][i] = count
+            count++
+        }
+        startY++
+        for(let i = startY; i <= endY; i++){
+            mtx[i][endX] = count
+            count++
+        }
+        endX--
+        for(let i = endX; i >= startX; i--){
+            mtx[endY][i] = count
+            count++
+        }
+        endY--
+        for(let i = endY; i >= startY; i--){
+            mtx[i][startX] = count
+            count++
+        }
+        startX++
     }
+
+    return mtx
 }
 
 module.exports = matrix;
