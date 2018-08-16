@@ -9,6 +9,15 @@ class Node {
     }
 }
 
-class LinkedList {}
+class LinkedList {
+    constructor(){
+        this.head = null
+    }
+
+    insertFirst(data){
+        let headNode = new Node(data)
+        this.head = headNode
+    }
+}
 
 module.exports = { Node, LinkedList };
