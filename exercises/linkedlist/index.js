@@ -15,7 +15,15 @@ class LinkedList {
     }
 
     insertFirst(data){
-        this.head = new Node(data)
+        this.head = new Node(data, this.head)
+    }
+
+    size(){
+        let count = 0
+        while(this.head && this.head.next){
+            count++
+        }
+        return count
     }
 }
 
